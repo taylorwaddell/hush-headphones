@@ -17,8 +17,9 @@
 */
 
 :root {
-  --primary: #27eba7;
-  --secondary: #0e111f;
+  --primary: #7F3C7A;
+  --secondary: #FFFFFF;
+  --lightprim: #AC5EA6;
   --accent: #ffffff;
   --transparent: #ffffff0c;
   --font-primary: "Rubik", sans-serif;
@@ -41,6 +42,15 @@ h1 {
   color: var(--primary);
   font-family: var(--font-primary);
   font-weight: 600;
+}
+
+h2 {
+    color: var(--lightprim);
+}
+
+li {
+    list-style: none;
+    margin-top: 1rem;
 }
 
 img {
