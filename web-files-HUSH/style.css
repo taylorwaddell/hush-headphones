@@ -1,0 +1,147 @@
+/*
+:root explained <<<<<<<<<<<<<
+  --primary - the color of the heading as well as the hover
+     color change on link buttons and icons
+
+  --secondary - the background color and the link button hover
+    text color
+
+  --accent - the color of: link button outline, link button text,
+      and icons
+
+  --transparent - background color of link buttons
+
+  --font-primary - font used for heading
+
+  --font-secondary - font used for link buttons
+*/
+
+:root {
+  --primary: #27eba7;
+  --secondary: #0e111f;
+  --accent: #ffffff;
+  --transparent: #ffffff0c;
+  --font-primary: "Rubik", sans-serif;
+  --font-secondary: "Rubik", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--secondary);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+}
+
+h1 {
+  color: var(--primary);
+  font-family: var(--font-primary);
+  font-weight: 600;
+}
+
+img {
+  margin-top: 1rem;
+  border-radius: 10rem;
+  border: var(--accent);
+  width: 7rem;
+}
+
+a:link {
+  text-decoration: none;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+a {
+  text-align: center;
+}
+
+body {
+  background: var(--secondary);
+  overflow-x: hidden;
+}
+
+.d-none {
+  display: none;
+}
+
+.basicGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#icons {
+  margin: 1.25rem;
+  display: inline-block;
+}
+
+svg {
+  margin: 0;
+  padding: 0;
+  height: 2rem;
+  fill: var(--accent);
+  width: 2rem;
+  height: 2rem;
+}
+
+svg:hover {
+  fill: var(--primary);
+}
+
+.card {
+  background: var(--transparent);
+  font-size: 1rem;
+  color: var(--accent);
+  height: 2rem;
+  width: 15rem;
+  border: solid var(--accent);
+  border-radius: 0.5rem;
+  border-width: 0.17rem;
+  transition: all 500ms;
+  overflow: hidden;
+  padding: 0.5em;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card:hover {
+  background-color: var(--primary);
+  color: var(--secondary);
+  transition: ease-in-out;
+}
+
+/* Gives featured link some breathing room */
+.card:first-child {
+  margin-bottom: 1rem;
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-width: 768px) {
+  .card {
+    height: 2.5rem;
+    width: 20rem;
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1024px) {
+  .card {
+    height: 3rem;
+    width: 25rem;
+  }
+}
