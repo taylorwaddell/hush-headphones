@@ -3,7 +3,7 @@
   --primary - the color of the heading as well as the hover
      color change on link buttons and icons
 
-  --secondary - the background color and the link button hover
+  --background - the background color and the link button hover
     text color
 
   --accent - the color of: link button outline, link button text,
@@ -17,63 +17,74 @@
 */
 
 :root {
-  --primary: #7F3C7A;
-  --secondary: #FFFFFF;
-  --lightprim: #AC5EA6;
-  --accent: #ffffff;
+  --primary: #7f3c7a;
+  --secondary: #707070;
+  --background: #ffffff;
+  --lightprim: #ac5ea6;
+  --accent: #a0a0a0;
   --transparent: #ffffff0c;
   --font-primary: "Rubik", sans-serif;
   --font-secondary: "Rubik", sans-serif;
 }
 
 body::-webkit-scrollbar {
-  width: 0.25rem;
+  width: 0;
 }
 
-body::-webkit-scrollbar-track {
-  background: var(--secondary);
-}
-
-body::-webkit-scrollbar-thumb {
-  background: var(--secondary);
-}
-
-h1 {
+h1,
+h2 {
   color: var(--primary);
   font-family: var(--font-primary);
   font-weight: 600;
+  font-size: 1.25rem;
+  margin-top: 2rem;
 }
 
-h2 {
-    color: var(--lightprim);
+h3 {
+  color: var(--lightprim);
+  margin-top: 2rem;
+  margin-bottom: 0;
+  font-size: 1.25rem;
+}
+
+ul {
+  margin: 0;
 }
 
 li {
-    list-style: none;
-    margin-top: 1rem;
+  list-style: none;
+  margin-top: 1rem;
+}
+
+li:first-child {
+  margin-top: 0;
+}
+
+p {
+  margin: 0;
+  font-size: 17px;
+}
+
+#reserve {
+  margin-top: 2rem;
+  margin-bottom: 0;
 }
 
 img {
   margin-top: 1rem;
   border-radius: 10rem;
-  border: var(--accent);
   width: 7rem;
 }
 
-a:link {
-  text-decoration: none;
-  font-family: var(--font-primary);
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
-a {
-  text-align: center;
-}
-
 body {
-  background: var(--secondary);
+  background: var(--background);
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.sideBuffer {
+  padding: 1.75rem;
 }
 
 .d-none {
@@ -82,7 +93,6 @@ body {
 
 .basicGrid {
   display: grid;
-  gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 }
 
@@ -93,65 +103,150 @@ body {
   align-items: center;
 }
 
-#icons {
-  margin: 1.25rem;
-  display: inline-block;
-}
-
-svg {
-  margin: 0;
-  padding: 0;
-  height: 2rem;
-  fill: var(--accent);
-  width: 2rem;
-  height: 2rem;
-}
-
-svg:hover {
-  fill: var(--primary);
-}
-
 .card {
   background: var(--transparent);
   font-size: 1rem;
-  color: var(--accent);
-  height: 2rem;
-  width: 15rem;
-  border: solid var(--accent);
-  border-radius: 0.5rem;
-  border-width: 0.17rem;
-  transition: all 500ms;
-  overflow: hidden;
-  padding: 0.5em;
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.card:hover {
-  background-color: var(--primary);
   color: var(--secondary);
-  transition: ease-in-out;
+  padding: 0.5em;
 }
 
-/* Gives featured link some breathing room */
-.card:first-child {
-  margin-bottom: 1rem;
+/* BEGIN MILIGRAM CSS USAGE */
+
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+input[type="text"],
+input:not([type]),
+textarea {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 0.1rem solid #d1d1d1;
+  border-radius: 0.4rem;
+  box-shadow: none;
+  height: 1.5rem;
+  padding: 1.4rem 1rem 1.5rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  box-sizing: border-box;
+}
+
+input[type="date"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input:not([type]):focus,
+textarea:focus {
+  border-color: var(--primary);
+  outline: 0;
+}
+
+textarea {
+  min-height: 6.5rem;
+}
+
+.button,
+button,
+input[type="button"],
+input[type="submit"] {
+  background-color: var(--primary);
+  border: 0.1rem solid var(--primary);
+  border-radius: 0.4rem;
+  color: var(--background);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  height: 3rem;
+  letter-spacing: 0.1rem;
+  line-height: 3rem;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-top: 0.25rem;
+  width: 100%;
+}
+
+.button:focus,
+.button:hover,
+button:focus,
+button:hover,
+input[type="button"]:focus,
+input[type="button"]:hover,
+input[type="submit"]:focus,
+input[type="submit"]:hover {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--background);
+  outline: 0;
+}
+/* END MILIGRAM USAGE */
+
+form {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0.75rem;
+}
+
+footer {
+  border-top: 0.1rem solid var(--accent);
+  height: 10vh;
+  width: 100%;
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+
+footer p {
+  color: var(--accent);
+  font-size: 14px;
+}
+
+footer p:last-child {
+  margin-bottom: 1.5rem;
 }
 
 /* iPads (portrait) ----------- */
 @media only screen and (min-width: 768px) {
-  .card {
-    height: 2.5rem;
-    width: 20rem;
+  .card,
+  form {
+    max-width: 30rem;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  footer p {
+    font-size: 14px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: 1.75rem;
   }
 }
 
 /* Desktops and laptops ----------- */
 @media only screen and (min-width: 1024px) {
-  .card {
-    height: 3rem;
-    width: 25rem;
+  .card,
+  form {
+    max-width: 35rem;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  footer p {
+    font-size: 15px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: 2rem;
   }
 }
