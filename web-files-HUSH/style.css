@@ -27,8 +27,23 @@
   --font-secondary: "Rubik", sans-serif;
 }
 
+
 body::-webkit-scrollbar {
   width: 0;
+}
+
+header {
+  position: relative;
+}
+
+svg {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+}
+
+#toggleDark {
+
 }
 
 h1,
@@ -227,6 +242,7 @@ footer p:last-child {
   h3 {
     font-size: 1.75rem;
   }
+  
 }
 
 /* Desktops and laptops ----------- */
