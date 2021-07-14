@@ -18,8 +18,10 @@
 
 :root {
   --primary: #7f3c7a;
-  --secondary: #707070;
+  --secondary: #898989;
+  --emphasis: #707070;
   --background: #ffffff;
+  --submitBtn: #ffffff;
   --lightprim: #ac5ea6;
   --accent: #a0a0a0;
   --transparent: #ffffff0c;
@@ -27,6 +29,20 @@
   --font-secondary: "Rubik", sans-serif;
 }
 
+body.dark {
+  --primary: #AC5EA6;
+  --secondary: #D0D0D0;
+  --emphasis: #FFFFFF;
+  --background: #2B242A;
+  --submitBtn: #D0D0D0;
+  --lightprim: #B589B2;
+  --accent: #585858;
+  --transparent: #2B242A0c;
+}
+
+.d-none {
+  display: none;
+}
 
 body::-webkit-scrollbar {
   width: 0;
@@ -40,10 +56,7 @@ svg {
   position: absolute;
   top: 1.25rem;
   right: 1.25rem;
-}
-
-#toggleDark {
-
+  cursor: pointer;
 }
 
 h1,
@@ -52,6 +65,13 @@ h2 {
   font-family: var(--font-primary);
   font-weight: 600;
   font-size: 1.25rem;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+h2 {
   margin-top: 2rem;
 }
 
@@ -86,9 +106,10 @@ p {
 }
 
 img {
+  padding: 0;
   margin-top: 1rem;
   border-radius: 10rem;
-  width: 7rem;
+  width: 10rem;
 }
 
 body {
@@ -125,6 +146,11 @@ body {
   padding: 0.5em;
 }
 
+.emphasis {
+  font-weight: 600;
+  color: var(--emphasis);
+}
+
 /* BEGIN MILIGRAM CSS USAGE */
 
 input[type="date"],
@@ -135,7 +161,7 @@ input:not([type]),
 textarea {
   -webkit-appearance: none;
   background-color: transparent;
-  border: 0.1rem solid #d1d1d1;
+  border: 0.125rem solid #D0D0D0;
   border-radius: 0.4rem;
   box-shadow: none;
   height: 1.5rem;
@@ -143,6 +169,7 @@ textarea {
   width: 100%;
   margin-bottom: 0.5rem;
   box-sizing: border-box;
+  color: var(--accent);
 }
 
 input[type="date"]:focus,
@@ -167,7 +194,7 @@ input[type="submit"] {
   background-color: var(--primary);
   border: 0.1rem solid var(--primary);
   border-radius: 0.4rem;
-  color: var(--background);
+  color: var(--submitBtn);
   cursor: pointer;
   display: inline-block;
   font-size: 1.1rem;
