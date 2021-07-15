@@ -30,18 +30,22 @@
 }
 
 body.dark {
-  --primary: #AC5EA6;
-  --secondary: #D0D0D0;
-  --emphasis: #FFFFFF;
-  --background: #2B242A;
-  --submitBtn: #D0D0D0;
-  --lightprim: #B589B2;
+  --primary: #ac5ea6;
+  --secondary: #d0d0d0;
+  --emphasis: #ffffff;
+  --background: #2b242a;
+  --submitBtn: #d0d0d0;
+  --lightprim: #b589b2;
   --accent: #585858;
-  --transparent: #2B242A0c;
+  --transparent: #2b242a0c;
 }
 
-.d-none {
-  display: none;
+body {
+  background: var(--background);
+  overflow-x: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
 }
 
 body::-webkit-scrollbar {
@@ -112,19 +116,12 @@ img {
   width: 10rem;
 }
 
-body {
-  background: var(--background);
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
+.d-none {
+  display: none;
 }
 
 .sideBuffer {
   padding: 1.75rem;
-}
-
-.d-none {
-  display: none;
 }
 
 .basicGrid {
@@ -161,7 +158,7 @@ input:not([type]),
 textarea {
   -webkit-appearance: none;
   background-color: transparent;
-  border: 0.125rem solid #D0D0D0;
+  border: 0.125rem solid #d0d0d0;
   border-radius: 0.4rem;
   box-shadow: none;
   height: 1.5rem;
@@ -269,7 +266,6 @@ footer p:last-child {
   h3 {
     font-size: 1.75rem;
   }
-  
 }
 
 /* Desktops and laptops ----------- */

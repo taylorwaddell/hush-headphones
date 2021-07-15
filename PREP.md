@@ -1,8 +1,8 @@
 # HUSH - Hip Unique Silent Headphones
 ### General Breakdown
 - Miligram CSS
-- React
 - EmailJS
+- formsubmit.co
 - Domain
 - Email
 - Hosting
